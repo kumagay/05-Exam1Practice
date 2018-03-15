@@ -2,8 +2,8 @@
 PRACTICE Test 1, problem 2.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Yuhi Kumagai.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -110,6 +110,21 @@ def problem2a(circle, rectangle, window):
     #    DIFFICULTY:      6
     #    TIME ESTIMATE:   10 to 15 minutes.
     # ------------------------------------------------------------------
+    circle.attach_to(window)
+    rectangle.attach_to(window)
+
+    start.x = max(rectangle.corner_1.x, rectangle.corner_2.x)
+    start.y = max(rectangle.corner_1.y, rectangle.corner_2.y)
+    end. x = min(rectangle.corner_1.x, rectangle.corner_2.x)
+    end.y = min(rectangle.corner_1.y, rectangle.corner_2.y)
+   # start = rg.Point(rectangle.corner_2.x, rectangle.corner_1.y)
+   # end = rg.Point(rectangle.corner_1.x, rectangle.corner_2.y)
+    line = rg.Line(start, end)
+    line.arrow = 'last'
+    line.attach_to(window)
+
+
+    window.render()
 
 def run_test_problem2b():
     """ Tests the  problem2b   function. """
